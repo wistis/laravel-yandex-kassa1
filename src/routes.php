@@ -1,7 +1,7 @@
 <?php
 
 app('router')->group([
-   'namespace' => 'Artem328\LaravelYandexKassa'
+   'namespace' => 'Wistis\LaravelYandexKassa'
 ], function () {
 
     /** @var \Illuminate\Routing\Router $router */
