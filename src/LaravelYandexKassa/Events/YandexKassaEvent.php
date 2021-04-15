@@ -1,5 +1,5 @@
 <?php
-namespace Artem328\LaravelYandexKassa\Events;
+namespace Wistis\LaravelYandexKassa\Events;
 
 abstract class YandexKassaEvent
 {

@@ -1,16 +1,16 @@
 <?php
-namespace Artem328\LaravelYandexKassa;
+namespace Wistis\LaravelYandexKassa;
 
-use Artem328\LaravelYandexKassa\Events\BeforeCancelOrderResponse;
-use Artem328\LaravelYandexKassa\Events\BeforeCheckOrderResponse;
-use Artem328\LaravelYandexKassa\Events\BeforePaymentAvisoResponse;
-use Artem328\LaravelYandexKassa\Requests\YandexKassaRequest;
+use Wistis\LaravelYandexKassa\Events\BeforeCancelOrderResponse;
+use Wistis\LaravelYandexKassa\Events\BeforeCheckOrderResponse;
+use Wistis\LaravelYandexKassa\Events\BeforePaymentAvisoResponse;
+use Wistis\LaravelYandexKassa\Requests\YandexKassaRequest;
 use Illuminate\Routing\Controller;
 
 class YandexKassaController extends Controller
 {
     /**
-     * @param \Artem328\LaravelYandexKassa\Requests\YandexKassaRequest $request
+     * @param \Wistis\LaravelYandexKassa\Requests\YandexKassaRequest $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
     public function checkOrder(YandexKassaRequest $request)
@@ -28,7 +28,7 @@ class YandexKassaController extends Controller
     }
 
     /**
-     * @param \Artem328\LaravelYandexKassa\Requests\YandexKassaRequest $request
+     * @param \Wistis\LaravelYandexKassa\Requests\YandexKassaRequest $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
     public function cancelOrder(YandexKassaRequest $request)
@@ -46,7 +46,7 @@ class YandexKassaController extends Controller
     }
 
     /**
-     * @param \Artem328\LaravelYandexKassa\Requests\YandexKassaRequest $request
+     * @param \Wistis\LaravelYandexKassa\Requests\YandexKassaRequest $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
     public function paymentAviso(YandexKassaRequest $request)
@@ -65,7 +65,7 @@ class YandexKassaController extends Controller
 
     /**
      *
-     * @param \Artem328\LaravelYandexKassa\Requests\YandexKassaRequest $request
+     * @param \Wistis\LaravelYandexKassa\Requests\YandexKassaRequest $request
      * @return array
      */
     protected function getDefaultResponseParameters(YandexKassaRequest $request)

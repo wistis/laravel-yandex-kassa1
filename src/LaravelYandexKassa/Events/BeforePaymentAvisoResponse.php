@@ -1,4 +1,4 @@
 <?php
-namespace Artem328\LaravelYandexKassa\Events;
+namespace Wistis\LaravelYandexKassa\Events;
 
 class BeforePaymentAvisoResponse extends BeforeResponse {}

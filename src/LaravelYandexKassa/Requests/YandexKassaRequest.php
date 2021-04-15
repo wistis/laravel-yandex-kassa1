@@ -1,5 +1,5 @@
 <?php
-namespace Artem328\LaravelYandexKassa\Requests;
+namespace Wistis\LaravelYandexKassa\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

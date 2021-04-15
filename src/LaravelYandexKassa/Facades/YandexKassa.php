@@ -6,7 +6,7 @@
  * Time: 15:24
  */
 
-namespace Artem328\LaravelYandexKassa\Facades;
+namespace Wistis\LaravelYandexKassa\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

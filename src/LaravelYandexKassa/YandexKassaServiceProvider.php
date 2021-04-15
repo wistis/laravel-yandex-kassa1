@@ -1,6 +1,6 @@
 <?php
 
-namespace Artem328\LaravelYandexKassa;
+namespace Wistis\LaravelYandexKassa;
 
 use Illuminate\Support\ServiceProvider;
 
