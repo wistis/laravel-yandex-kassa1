@@ -11,7 +11,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
     "require": {
-        "artem328/laravel-yandex-kassa": "~1.0.*"
+        "wistis/laravel-yandex-kassa": "~1.0.*"
     }
 }
 ```
@@ -22,7 +22,7 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-    composer require "artem328/laravel-yandex-kassa=~1.0.*"
+    composer require "wistis/laravel-yandex-kassa=~1.0.*"
 
 ## Usage
 
@@ -34,7 +34,7 @@ For using Laravel Yandex Kassa Package, you need to add service provider into `c
         //...
         'providers' => [
             //...
-            Artem328\LaravelYandexKassa\YandexKassaServiceProvider::class,
+            Wistis\LaravelYandexKassa\YandexKassaServiceProvider::class,
         ],
         //...
     ];
@@ -48,7 +48,7 @@ For resolving `YandexKassa` class instance you can add such line into `config/ap
         //...
         'aliases' => [
             //...
-            'YandexKassa' => Artem328\LaravelYandexKassa\Facades\YandexKassa::class,
+            'YandexKassa' => Wistis\LaravelYandexKassa\Facades\YandexKassa::class,
         ],
         //...
     ];
@@ -58,7 +58,7 @@ and now call methods statically from `YandexKassa` class or you can use helper f
 ### Configs
 Also you need to publish configs, and fill some required data as `sc_id`, `shop_id` and `shop_password`. To publish configs, run this command:
 
-    php artisan vendor:publish --provider="Artem328\LaravelYandexKassa\YandexKassaServiceProvider" --tag="config"
+    php artisan vendor:publish --provider="Wistis\LaravelYandexKassa\YandexKassaServiceProvider" --tag="config"
 
 Now config file `yandex_kassa.php` will be placed at your application config directory. In your application .env file you can set some options:
  * `test_mode` as `YANDEX_KASSA_TEST_MODE`
@@ -69,21 +69,21 @@ Now config file `yandex_kassa.php` will be placed at your application config dir
 ### Views
 As default this package use bootstrap 3 form layout that should be included into your page. You can customize this form by publishing views. To do this, run this command:
 
-    php artisan vendor:publish --provider="Artem328\LaravelYandexKassa\YandexKassaServiceProvider" --tag="view"
+    php artisan vendor:publish --provider="Wistis\LaravelYandexKassa\YandexKassaServiceProvider" --tag="view"
 
 and default layouts will be placed at your resource directory under `views/vendor/yandex_kassa`. You can customize layouts now. Pay attention at form layout that should contain all required fields for Yandex Kassa work correctly.
 
 ### Languages
 You can publish language files if you want customize payment names or form labels. Just run command:
 
-    php artisan vendor:publish --provider="Artem328\LaravelYandexKassa\YandexKassaServiceProvider" --tag="lang"
+    php artisan vendor:publish --provider="Wistis\LaravelYandexKassa\YandexKassaServiceProvider" --tag="lang"
 
 Localization files will be placed to resource directory `lang/vendor/yandex_kassa`. If you need to add new locale files just create directory with locale name inside and copy files structure from existing locale folder, then change translation values.
 
 #### Publish all resources
 If you want to publish config, views and languages, just run this command:
 
-    php artisan vender:publish --provider="Artem328\LaravelYandexKassa\YandexKassaServiceProvider"
+    php artisan vender:publish --provider="Wistis\LaravelYandexKassa\YandexKassaServiceProvider"
 
 ### Show payment form
 To show payment form in your layout just add this code:
@@ -105,12 +105,12 @@ Yandex Kassa calls your application callbacks and waiting for response. You can 
     namespace App\Listeners;
 
     use App\Order;
-    use Artem328\LaravelYandexKassa\Events\BeforePaymentAvisoResponse;
+    use Wistis\LaravelYandexKassa\Events\BeforePaymentAvisoResponse;
 
     class ChangeOrderStatusWhenPaymentSuccessful
     {
         /**
-         * @param \Artem328\LaravelYandexKassa\Events\BeforePaymentAvisoResponse
+         * @param \Wistis\LaravelYandexKassa\Events\BeforePaymentAvisoResponse
          * @return void
          */
         public function handle(BeforePaymentAvisoResponse $event)
@@ -135,12 +135,12 @@ Yandex Kassa calls your application callbacks and waiting for response. You can 
     namespace App\Listeners;
 
     use App\Order;
-    use Artem328\LaravelYandexKassa\Events\BeforeCheckOrderResponse;
+    use Wistis\LaravelYandexKassa\Events\BeforeCheckOrderResponse;
 
     class CheckOrderRequisites
     {
         /**
-         * @param \Artem328\LaravelYandexKassa\Events\BeforeCheckOrderResponse
+         * @param \Wistis\LaravelYandexKassa\Events\BeforeCheckOrderResponse
          * @return array|null
          */
         public function handle(BeforeCheckOrderResponse $event)
@@ -175,7 +175,7 @@ To listen events you should add some code to `app/Providers/EventServiceProvider
     {
         //...
         protected $listen = [
-            'Artem328\LaravelYandexKassa\Events\BeforeCheckOrderResponse' => [
+            'Wistis\LaravelYandexKassa\Events\BeforeCheckOrderResponse' => [
                 'App\Listeners\CheckOrderRequisites',
                 // You can add more than one listener and every
                 // listener can return own parameters. Incoming
@@ -183,7 +183,7 @@ To listen events you should add some code to `app/Providers/EventServiceProvider
                 // parameters WILL override in listeners order
                 // 'App\Listeneres\AddCheckOrderRecord',
             ],
-            'Artem328\LaravelYandexKassa\Events\BeforePaymentAvisoResponse' => [
+            'Wistis\LaravelYandexKassa\Events\BeforePaymentAvisoResponse' => [
                 'App\Listeners\ChangeOrderStatusWhenPaymentSuccessful',
             ]
         ];
@@ -192,4 +192,4 @@ To listen events you should add some code to `app/Providers/EventServiceProvider
 ```
 
 ## Licence
-MIT. See the [LICENCE](https://github.com/artem328/laravel-yandex-kassa/blob/master/LICENSE.md) file
+MIT. See the [LICENCE](https://github.com/Wistis/laravel-yandex-kassa/blob/master/LICENSE.md) file
