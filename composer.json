@@ -6,10 +6,10 @@
         "laravel", "yandex", "kassa", "money",
         "яндекс", "касса", "деньги"
     ],
-    "homepage": "https://github.com/artem328/laravel-yandex-kassa",
+    "homepage": "https://github.com/wistis/laravel-yandex-kassa",
     "license": "MIT",
     "authors": [
-        {"name": "Artem Vozhzhov", "email": "vojjov.artem@ya.ru", "role": "Developer"}
+        {"name": "Wistis", "email": "dev@wistis.ru", "role": "Developer"}
     ],
     "require": {
         "illuminate/support": "~5.1",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Artem328\\LaravelYandexKassa\\": "src/LaravelYandexKassa"
+            "Wistis\\LaravelYandexKassa\\": "src/LaravelYandexKassa"
         },
         "files": [
             "src/LaravelYandexKassa/helpers.php"
