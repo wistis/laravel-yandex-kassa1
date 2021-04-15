@@ -1,5 +1,5 @@
 {
-    "name": "artem328/laravel-yandex-kassa",
+    "name": "wistis/laravel-yandex-kassa",
     "type": "library",
     "description": "Yandex Kassa integration with Laravel framework",
     "keywords": [
